@@ -2,12 +2,15 @@ package models;
 
 import java.io.Serializable;
 
+
+
 public class Person implements Serializable
 {
     private int id, height, age;
     private String name;
     private Gender gender,preferenceGender;
-    private Borders preferenceHeight,preferenceAge;
+
+    private int lowPreferenceAge,highPreferenceAge;
 
     public int getId()
     {
@@ -63,26 +66,26 @@ public class Person implements Serializable
         this.preferenceGender = preferenceGender;
     }
 
-    public Borders getPreferenceHeight()
+    public int getLowPreferenceAge()
     {
-        return preferenceHeight;
+        return lowPreferenceAge;
     }
-    public void setPreferenceHeight(Borders preferenceHeight)
+    public void setLowPreferenceAge(int lowPreferenceAge)
     {
-        this.preferenceHeight = preferenceHeight;
+        this.lowPreferenceAge = lowPreferenceAge;
+    }
+    public int getHighPreferenceAge()
+    {
+        return highPreferenceAge;
+    }
+    public void setHighPreferenceAge(int highPreferenceAge)
+    {
+        this.highPreferenceAge = highPreferenceAge;
     }
 
-    public Borders getPreferenceAge()
-    {
-        return preferenceAge;
-    }
-    public void setPreferenceAge(Borders preferenceAge)
-    {
-        this.preferenceAge = preferenceAge;
-    }
 
-    public Person(int id, int height, int age, String name, Gender gender,
-                  Gender preferenceGender, Borders preferenceHeight, Borders preferenceAge)
+    public Person(int id, int age, int height,  Gender gender,
+                  Gender preferenceGender, int lowPreferenceAge, int highPreferenceAge,String name)
     {
         this.id = id;
         this.height = height;
@@ -90,7 +93,7 @@ public class Person implements Serializable
         this.name = name;
         this.gender = gender;
         this.preferenceGender = preferenceGender;
-        this.preferenceHeight = preferenceHeight;
-        this.preferenceAge = preferenceAge;
+        this.lowPreferenceAge = lowPreferenceAge;
+        this.highPreferenceAge=highPreferenceAge;
     }
 }
