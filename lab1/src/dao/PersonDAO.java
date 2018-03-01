@@ -1,9 +1,10 @@
 package dao;
 
-import models.Gender;
-import models.Person;
+import entity.Gender;
+import entity.Person;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public interface PersonDAO
 {
@@ -11,5 +12,11 @@ public interface PersonDAO
 
     boolean removePerson(Person person);
 
-    ArrayList<Person> getPersons(Gender preferenceGender, int preferenceHeight, int preferenceAge);
+    boolean updatePerson(Person person);
+
+    Person getPersonById(int id);
+
+    List<Person> getPersons();
+
+    List<Person> getSuitablePersons(Person person);
 }

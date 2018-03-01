@@ -1,3 +1,3 @@
-package models;
+package entity;
 
 public enum Gender {MALE,FEMALE}

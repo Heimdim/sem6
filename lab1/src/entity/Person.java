@@ -1,4 +1,4 @@
-package models;
+package entity;
 
 import java.io.Serializable;
 
@@ -84,10 +84,9 @@ public class Person implements Serializable
     }
 
 
-    public Person(int id, int age, int height,  Gender gender,
-                  Gender preferenceGender, int lowPreferenceAge, int highPreferenceAge,String name)
+    public Person(int age, int height,Gender preferenceGender, Gender gender,
+                   int lowPreferenceAge, int highPreferenceAge, String name)
     {
-        this.id = id;
         this.height = height;
         this.age = age;
         this.name = name;
@@ -95,5 +94,19 @@ public class Person implements Serializable
         this.preferenceGender = preferenceGender;
         this.lowPreferenceAge = lowPreferenceAge;
         this.highPreferenceAge=highPreferenceAge;
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "id=" + id +
+                ", height=" + height +
+                ", age=" + age +
+                ", name='" + name + '\'' +
+                ", gender=" + gender +
+                ", preferenceGender=" + preferenceGender +
+                ", lowPreferenceAge=" + lowPreferenceAge +
+                ", highPreferenceAge=" + highPreferenceAge +
+                '}';
     }
 }
