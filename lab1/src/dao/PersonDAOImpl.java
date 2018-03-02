@@ -108,24 +108,24 @@ public class PersonDAOImpl implements PersonDAO
     }
 
     @Override
-    public boolean updatePerson(Person person)
+    public boolean updatePerson(Person person1,Person person2)
     {
         try
         {
-            int genderID=(person.getGender().equals(Gender.MALE))?1:2;
-            int preferenceGenderID=(person.getPreferenceGender().equals(Gender.MALE))?1:2;
+            int genderID=(person2.getGender().equals(Gender.MALE))?1:2;
+            int preferenceGenderID=(person2.getPreferenceGender().equals(Gender.MALE))?1:2;
             DBManager dbm = new DBManager();
             con = dbm.getConnection();
             prepSt1 = con.prepareStatement(UPDATE_RECORD);
 
-            prepSt1.setInt(1,person.getAge());
-            prepSt1.setInt(2,person.getHeight());
+            prepSt1.setInt(1,person2.getAge());
+            prepSt1.setInt(2,person2.getHeight());
             prepSt1.setInt(3,preferenceGenderID);
             prepSt1.setInt(4,genderID);
-            prepSt1.setInt(5,person.getLowPreferenceAge());
-            prepSt1.setInt(6,person.getHighPreferenceAge());
-            prepSt1.setString(7,person.getName());
-            prepSt1.setInt(8,person.getId());
+            prepSt1.setInt(5,person2.getLowPreferenceAge());
+            prepSt1.setInt(6,person2.getHighPreferenceAge());
+            prepSt1.setString(7,person2.getName());
+            prepSt1.setInt(8,person1.getId());
             prepSt1.executeUpdate();
 
             return true;
@@ -218,7 +218,6 @@ public class PersonDAOImpl implements PersonDAO
                 temp.setId(id);
                 buffLst.add(temp);
 
-                System.out.println(buffLst.size());
             }
             return buffLst;
         }
@@ -257,8 +256,6 @@ public class PersonDAOImpl implements PersonDAO
                 Person temp=new Person(age,height,prefGender,gender,lowPrefAge,highPrefAge,name);
                 temp.setId(id);
                 buffLst.add(temp);
-
-                System.out.println(buffLst.size());
             }
             return buffLst;
         }

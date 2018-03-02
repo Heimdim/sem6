@@ -12,7 +12,7 @@ public interface PersonDAO
 
     boolean removePerson(Person person);
 
-    boolean updatePerson(Person person);
+    boolean updatePerson(Person person1,Person person2);
 
     Person getPersonById(int id);
 
