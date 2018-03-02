@@ -99,9 +99,9 @@ public class Person implements Serializable
     @Override
     public String toString() {
         return "Person#" + id +
-                ",height=" + height +
-                ",age=" + age +
                 ",name=" + name  +
+                ",age=" + age +
+                ",height=" + height +
                 ",gender=" + gender +
                 ",preferenceGender=" + preferenceGender +
                 ",lowPreferenceAge=" + lowPreferenceAge +

@@ -94,25 +94,28 @@ public class Controller
     public void updatePerson(ActionEvent actionEvent)
     {
         Person curPerson=(Person)listViewPerson1.getSelectionModel().getSelectedItem();
-
-        Gender gender=(genderChoice.getValue() == null)?curPerson.getGender():(Gender)genderChoice.getValue(),
-               prefGender=(prefGenderChoice.getValue() == null)?curPerson.getPreferenceGender():(Gender)prefGenderChoice.getValue();
-        int age=(ageField.getText().equals(""))?curPerson.getAge():Integer.valueOf(ageField.getText()),
-            height=(heightField.getText().equals(""))?curPerson.getHeight():Integer.valueOf(heightField.getText()),
-            lPrefAge=(lPrefAgeField.getText().equals(""))?curPerson.getLowPreferenceAge():Integer.valueOf(lPrefAgeField.getText()),
-            hPrefAge=(hPrefAgeField.getText().equals(""))?curPerson.getHighPreferenceAge():Integer.valueOf(hPrefAgeField.getText());
-        String name=( nameField.getText().equals(""))?curPerson.getName():nameField.getText();
-
-        Person updatePerson=new Person(age,height,prefGender,gender,lPrefAge,hPrefAge,name);
-
-        if(!curPerson.equals(updatePerson))
+        if(curPerson != null)
         {
-            pdi.updatePerson(curPerson, updatePerson);
-            loadPersonsFromDB();
-            clearControls();
+            Gender gender = (genderChoice.getValue() == null) ? curPerson.getGender() : (Gender) genderChoice.getValue(),
+                   prefGender = (prefGenderChoice.getValue() == null) ? curPerson.getPreferenceGender() : (Gender) prefGenderChoice.getValue();
+
+            int age = (ageField.getText().equals("")) ? curPerson.getAge() : Integer.valueOf(ageField.getText()),
+                height = (heightField.getText().equals("")) ? curPerson.getHeight() : Integer.valueOf(heightField.getText()),
+                lPrefAge = (lPrefAgeField.getText().equals("")) ? curPerson.getLowPreferenceAge() : Integer.valueOf(lPrefAgeField.getText()),
+                hPrefAge = (hPrefAgeField.getText().equals("")) ? curPerson.getHighPreferenceAge() : Integer.valueOf(hPrefAgeField.getText());
+            String name = (nameField.getText().equals("")) ? curPerson.getName() : nameField.getText();
+
+            Person updatePerson = new Person(age, height, prefGender, gender, lPrefAge, hPrefAge, name);
+
+            if (!curPerson.equals(updatePerson))
+            {
+                pdi.updatePerson(curPerson, updatePerson);
+                loadPersonsFromDB();
+                clearControls();
+            } else
+                showError("Ooops, you just forget to make changes");
         }
-        else
-            showError("Ooops, you just forget to make changes");
+        else showError("Ooops, you just forget to choose person to update");
 
 
 
