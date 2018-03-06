@@ -10,6 +10,11 @@ public class RemoteServiceImpl implements RemoteService
 {
     PersonDAOImpl pdi;
 
+    public RemoteServiceImpl()
+    {
+        pdi=new PersonDAOImpl();
+    }
+
     @Override
     public List<Person> getSuitablePersons(Person temp) throws RemoteException {
         return pdi.getSuitablePersons(temp);
