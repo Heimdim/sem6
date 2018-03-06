@@ -24,6 +24,7 @@ public class PersonDAOImpl implements PersonDAO
     private Connection con;
     private PreparedStatement prepSt1;
 
+
     @Override
     public boolean addPerson(Person person)
     {
@@ -204,6 +205,7 @@ public class PersonDAOImpl implements PersonDAO
             DBManager dbm = new DBManager();
             con = dbm.getConnection();
             prepSt1 = con.prepareStatement(GET_ALL_RECORDS);
+
             ResultSet buffRS = prepSt1.executeQuery();
             List<Person> buffLst = new ArrayList<>();
             while(buffRS.next())
