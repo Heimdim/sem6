@@ -2,11 +2,13 @@ package dao;
 
 import entity.Gender;
 import entity.Person;
-import utils.DBManager;
+import utils.*;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+
+
 
 public class PersonDAOImpl implements PersonDAO
 {
@@ -29,6 +31,7 @@ public class PersonDAOImpl implements PersonDAO
        {
            int genderID=(person.getGender().equals(Gender.MALE))?1:2;
            int preferenceGenderID=(person.getPreferenceGender().equals(Gender.MALE))?1:2;
+
            DBManager dbm=new DBManager();
            con=dbm.getConnection();
            prepSt1=con.prepareStatement(ADD_RECORD);

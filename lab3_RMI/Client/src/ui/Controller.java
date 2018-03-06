@@ -1,23 +1,20 @@
 package ui;
 
-import com.sun.deploy.uitoolkit.impl.fx.ui.FXMessageDialog;
-import dao.PersonDAOImpl;
 import entity.Gender;
 import entity.Person;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
+import services.RemoteService;
 
-import java.net.URL;
+import java.rmi.RemoteException;
 import java.util.List;
-import java.util.ResourceBundle;
 
 public class Controller
 {
-    PersonDAOImpl pdi=new PersonDAOImpl();
+    RemoteService pdi;
 
     @FXML
     private ListView listViewPerson, listViewPartner,listViewPerson1;
@@ -28,8 +25,7 @@ public class Controller
     @FXML
     private ChoiceBox genderChoice, prefGenderChoice;
 
-    @FXML public void showPersonInfo(MouseEvent event)
-    {
+    @FXML public void showPersonInfo(MouseEvent event) throws RemoteException {
         infoTextPerson.clear();
         Person temp=(Person) listViewPerson.getSelectionModel().getSelectedItem();
         infoTextPerson.appendText(temp.toString().replace(',','\n'));
@@ -45,14 +41,14 @@ public class Controller
     }
 
     @FXML
-    public void initialize()
+    public void initialize() throws RemoteException
     {
         loadPersonsFromDB();
         genderChoice.setItems(FXCollections.observableArrayList(Gender.values()));
         prefGenderChoice.setItems(FXCollections.observableArrayList(Gender.values()));
     }
 
-    private void loadPersonsFromDB()
+    private void loadPersonsFromDB() throws RemoteException
     {
         List<Person> list=pdi.getPersons();
         listViewPerson.setItems(FXCollections.observableArrayList(list));
@@ -60,7 +56,7 @@ public class Controller
     }
 
 
-    public void addPerson(ActionEvent actionEvent)
+    public void addPerson(ActionEvent actionEvent) throws RemoteException
     {
         try
         {
@@ -79,7 +75,7 @@ public class Controller
         clearControls();
     }
 
-    public void removePerson(ActionEvent actionEvent)
+    public void removePerson(ActionEvent actionEvent) throws RemoteException
     {
         try
         {
@@ -91,7 +87,7 @@ public class Controller
         {showError("Ooops, you just forget to choose person to remove");}
     }
 
-    public void updatePerson(ActionEvent actionEvent)
+    public void updatePerson(ActionEvent actionEvent) throws RemoteException
     {
         Person curPerson=(Person)listViewPerson1.getSelectionModel().getSelectedItem();
         if(curPerson != null)
