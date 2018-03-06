@@ -9,8 +9,13 @@ import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import services.RemoteService;
 
+import java.net.URL;
+import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
+import java.rmi.registry.LocateRegistry;
+import java.rmi.registry.Registry;
 import java.util.List;
+import java.util.ResourceBundle;
 
 public class Controller
 {
@@ -41,12 +46,22 @@ public class Controller
     }
 
     @FXML
-    public void initialize() throws RemoteException
+    public void initialize()
     {
-        loadPersonsFromDB();
+        Registry registry  = null;
+        try {
+            registry = LocateRegistry.getRegistry("localhost", 4996);
+            System.out.println(registry.lookup("sample/MyService").getClass());
+            pdi = (RemoteService) registry.lookup("sample/MyService");
+            loadPersonsFromDB();
+        } catch (RemoteException|NotBoundException e) {
+            e.printStackTrace();
+        }
+
         genderChoice.setItems(FXCollections.observableArrayList(Gender.values()));
         prefGenderChoice.setItems(FXCollections.observableArrayList(Gender.values()));
     }
+
 
     private void loadPersonsFromDB() throws RemoteException
     {
@@ -136,5 +151,8 @@ public class Controller
         alert.setContentText(msg);
 
         alert.showAndWait();
+    }
+
+    public Controller() {
     }
 }
