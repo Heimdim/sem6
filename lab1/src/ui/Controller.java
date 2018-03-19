@@ -32,16 +32,25 @@ public class Controller
     {
         infoTextPerson.clear();
         Person temp=(Person) listViewPerson.getSelectionModel().getSelectedItem();
-        infoTextPerson.appendText(temp.toString().replace(',','\n'));
-        List<Person>list=pdi.getSuitablePersons(temp);
-        listViewPartner.setItems(FXCollections.observableArrayList(list));
+        if(temp!=null)
+        {
+            infoTextPerson.appendText(temp.toString().replace(',','\n'));
+            List<Person>list=pdi.getSuitablePersons(temp);
+            listViewPartner.setItems(FXCollections.observableArrayList(list));
+        }
+        else
+            showError("Oops, you just forget to choose person");
+
     }
 
     @FXML public void showPartnerInfo(MouseEvent event)
     {
         infoTextPartner.clear();
         Person temp=(Person) listViewPartner.getSelectionModel().getSelectedItem();
-        infoTextPartner.appendText(temp.toString().replace(',','\n'));
+        if(temp!=null)
+          infoTextPartner.appendText(temp.toString().replace(',','\n'));
+        else
+            showError("Oops, you just forget to choose person");
     }
 
     @FXML
