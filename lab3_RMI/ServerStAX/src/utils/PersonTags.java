@@ -2,7 +2,7 @@ package utils;
 
 public enum PersonTags
 {
-    ID("id"), AGE("age"), HEIGHT("height"), PREFGENDER("prefGender"),GENDER("gender"),LPREFAGE("lowPrefAge"),
+    PERSONS("persons"), PERSON("person"),ID("id"), AGE("age"), HEIGHT("height"), PREFGENDER("prefGender"),GENDER("gender"),LPREFAGE("lowPrefAge"),
     hPREFAGE("highPrefAge"), NAME("name");
 
     private String tag;
