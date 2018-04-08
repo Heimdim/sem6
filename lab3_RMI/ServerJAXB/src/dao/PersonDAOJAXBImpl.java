@@ -22,15 +22,31 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ Класс, реализующий интерфейс {@link PersonDAO},
+ служит для взаимодействия с xml файлом,
+ используя технологию JAXB
 
+ @author Dmitriy Romanovets
+ @version 1.0
+ */
 public class PersonDAOJAXBImpl implements PersonDAO
 {
+    /**Поле, хранящее путь к xml файлу, содержащему полный список людей     */
     private String xmlLocation = "ServerJAXB/src/xml_source/persons.xml";
+    /**Поле, хранящее путь к xsd файлу, описывающему схему xml документа,
+     * содержащего полный список людей*/
     private String xsdLocation="ServerJAXB/src/xml_source/persons.xsd";
 
+    /**
+     * Поле, содержащее JAXB контекст
+     * @see JAXBContext
+     */
     private JAXBContext context;
 
-
+    /**
+     * Конструктор класса, осуществляющий валидацию xml файла и получение контекста
+     */
     public PersonDAOJAXBImpl()
     {
         try
@@ -51,6 +67,11 @@ public class PersonDAOJAXBImpl implements PersonDAO
 
     }
 
+    /**
+     * Метод для добавления человека в xml файл, используя технологию JAXB
+     *
+     * @param person - добавляемый человек
+     */
     @Override
     public boolean addPerson(Person person)
     {
@@ -74,6 +95,11 @@ public class PersonDAOJAXBImpl implements PersonDAO
         return true;
     }
 
+    /**
+     * Метод для нахождения максимального существующего идентификационного номера среди существующих людей
+     * @param persons - полный список людей
+     * @return возвращает максимальный существующий идентификационный номер
+     */
     private int getMaxId(ArrayList<Person> persons)
     {
         int maxId = 0;
@@ -87,6 +113,11 @@ public class PersonDAOJAXBImpl implements PersonDAO
         return maxId;
     }
 
+    /**
+     * Метод для удаления заданного человека из xml файла, используя технологию JAXB
+     *
+     * @param person - удаляемый человек
+     */
     @Override
     public boolean removePerson(Person person)
     {
@@ -107,6 +138,12 @@ public class PersonDAOJAXBImpl implements PersonDAO
         return true;
     }
 
+    /**
+     * Метод для обновления параметров заданного человека
+     *
+     * @param person1 - обновляемый человек
+     * @param person2 - человек со внесенными изменениями
+     */
     @Override
     public boolean updatePerson(Person person1, Person person2)
     {
@@ -118,6 +155,12 @@ public class PersonDAOJAXBImpl implements PersonDAO
         return false;
     }
 
+    /**
+     * Метод для поиска человека по его идентификационному номеру
+     *
+     * @param id - идентификационный номер
+     * @return вовзращает человека с заданным идентификационным номером
+     */
     @Override
     public Person getPersonById(int id)
     {
@@ -129,6 +172,11 @@ public class PersonDAOJAXBImpl implements PersonDAO
         return  null;
     }
 
+    /**
+     * Метод для получения полного списка людей из xml файла, используя технологию JAXB
+     *
+     * @return возвращает полный список людей
+     */
     @Override
     public List<Person> getPersons()
     {
@@ -146,6 +194,12 @@ public class PersonDAOJAXBImpl implements PersonDAO
         return wrapPersons.getPersons();
     }
 
+    /**
+     * Метод для поиска подходящих по критерию партнеров в xml файле, используя технологию JAXB
+     *
+     * @param person - человек, для которого ищутся партнеры
+     * @return возвращает список подходящих партнеров
+     */
     @Override
     public List<Person> getSuitablePersons(Person person)
     {
