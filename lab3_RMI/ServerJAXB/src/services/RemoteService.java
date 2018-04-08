@@ -7,7 +7,7 @@ import java.rmi.RemoteException;
 import java.util.List;
 /**
  <p>Интерфейс удаленного сервиса, для реализации
- * вызова методов с помощью библиотеки <tt><a href="https://ru.wikipedia.org/wiki/RMI">RMI</a></tt>.
+ * вызова методов с помощью библиотеки <a href="https://ru.wikipedia.org/wiki/RMI">RMI</a>
 
  @author Dmitriy Romanovets
  @version 1.0
