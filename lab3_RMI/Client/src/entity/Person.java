@@ -107,4 +107,7 @@ public class Person implements Serializable
                 ",lowPreferenceAge=" + lowPreferenceAge +
                 ",highPreferenceAge=" + highPreferenceAge;
     }
+
+    public Person() {
+    }
 }
