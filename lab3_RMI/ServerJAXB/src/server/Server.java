@@ -8,11 +8,28 @@ import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.rmi.server.UnicastRemoteObject;
+/**
+ Класс, создающий сервер с использованием технологии RMI
+ (<a href="https://docs.oracle.com/javase/7/docs/api/java/rmi/server/package-summary.html">Java RMI Server</a>)
+
+ @author Dmitriy Romanovets
+ @version 1.0
+ */
+
 
 public class Server
 {
+    /**Поле, хрянящее уникальную строку для клиента */
     public static final String BINDING_NAME = "sample/MyService";
 
+    /**
+     * Основной метод сервера
+     *
+     * @param args - параметры командной строки
+     *
+     * @throws RemoteException
+     * @throws AlreadyBoundException
+     */
     public static void main(String[] args) throws RemoteException, AlreadyBoundException
     {
         System.out.print("Starting registry...");
