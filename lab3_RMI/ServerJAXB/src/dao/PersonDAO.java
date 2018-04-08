@@ -10,6 +10,7 @@ import java.util.List;
  @author Dmitriy Romanovets
  @version 1.0
  */
+
 public interface PersonDAO
 {
     /**
@@ -27,9 +28,9 @@ public interface PersonDAO
     boolean removePerson(Person person);
 
     /**
-     * Метод для обновления заданного человека
+     * Метод для обновления параметров заданного человека
      *
-     * @param person1 - обнолвяемый человек
+     * @param person1 - обновляемый человек
      * @param person2 - человек со внесенными изменениями
      */
     boolean updatePerson(Person person1, Person person2);
