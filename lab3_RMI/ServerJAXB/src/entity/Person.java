@@ -224,7 +224,7 @@ public class Person implements Serializable
     }
 
     /**
-     * Метод, перегружающий метод toString класса {@link Object}
+     * Метод, перегружающий метод toString класса {@link Object#toString()}
      *
      * @return возвращает текстовую строку с описанием человека
      */
