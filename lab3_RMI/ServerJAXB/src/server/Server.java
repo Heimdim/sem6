@@ -10,7 +10,7 @@ import java.rmi.registry.Registry;
 import java.rmi.server.UnicastRemoteObject;
 /**
  Класс, создающий сервер с использованием технологии RMI
- (<a href="https://docs.oracle.com/javase/7/docs/api/java/rmi/server/package-summary.html">Java RMI Server</a>)
+ (<a href="https://docs.oracle.com/javase/8/docs/api/java/rmi/server/package-summary.html">Java RMI Server</a>)
 
  @author Dmitriy Romanovets
  @version 1.0
