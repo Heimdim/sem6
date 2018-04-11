@@ -27,8 +27,8 @@ public class Server
      *
      * @param args - параметры командной строки
      *
-     * @throws RemoteException
-     * @throws AlreadyBoundException
+     * @throws RemoteException - выкидывается в случае ошибок при создании registry, stub
+     * @throws AlreadyBoundException - выкидывается в случае ошибок при бинде
      */
     public static void main(String[] args) throws RemoteException, AlreadyBoundException
     {
