@@ -21,6 +21,7 @@ public interface RemoteService extends Remote
      *
      * @param temp - человек, для которого ищутся партнеры
      * @return возвращает список подходящих партнеров
+     * @throws RemoteException - выкидывается при возникновение ошибок, связанных с удаленным вызовом методов
      */
     List<Person> getSuitablePersons(Person temp) throws RemoteException;
 
@@ -28,6 +29,7 @@ public interface RemoteService extends Remote
      * Метод для получения полного списка людей
      *
      * @return вовзращает полный список людей
+     * @throws RemoteException - выкидывается при возникновение ошибок, связанных с удаленным вызовом методов
      */
     List<Person> getPersons()throws RemoteException;
 
@@ -35,7 +37,7 @@ public interface RemoteService extends Remote
      * Метод для добавления человека
      *
      * @param temp - добавляемый человек
-     * @throws RemoteException
+     * @throws RemoteException - выкидывается при возникновение ошибок, связанных с удаленным вызовом методов
      */
     void addPerson(Person temp)throws RemoteException;
 
@@ -43,7 +45,7 @@ public interface RemoteService extends Remote
      * Метод для удаление заданного человека
      *
      * @param selectedItem - заданный для удаления человек
-     * @throws RemoteException
+     * @throws RemoteException - выкидывается при возникновение ошибок, связанных с удаленным вызовом методов
      */
     void removePerson(Person selectedItem)throws RemoteException;
 
@@ -52,7 +54,7 @@ public interface RemoteService extends Remote
      *
      * @param curPerson - обновляемый человек
      * @param updatePerson - человек со внесенными изменениями
-     * @throws RemoteException
+     * @throws RemoteException - выкидывается при возникновение ошибок, связанных с удаленным вызовом методов
      */
     void updatePerson(Person curPerson, Person updatePerson)throws RemoteException;
 }
