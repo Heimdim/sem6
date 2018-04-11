@@ -32,7 +32,7 @@ public class RemoteServiceImpl implements RemoteService
      *
      * @param temp - человек, для которого ищутся партнеры
      * @return возвращает список подходящих партнеров
-     * @throws RemoteException
+     * @throws RemoteException - выкидывается при возникновение ошибок, связанных с удаленным вызовом методов
      */
     @Override
     public List<Person> getSuitablePersons(Person temp) throws RemoteException {
@@ -53,7 +53,7 @@ public class RemoteServiceImpl implements RemoteService
      * Метод для добавления человека
      *
      * @param temp - добавляемый человек
-     * @throws RemoteException
+     * @throws RemoteException - выкидывается при возникновение ошибок, связанных с удаленным вызовом методов
      */
     @Override
     public void addPerson(Person temp) throws RemoteException {
@@ -64,7 +64,7 @@ public class RemoteServiceImpl implements RemoteService
      * Метод для удаление заданного человека
      *
      * @param selectedItem - заданный для удаления человек
-     * @throws RemoteException
+     * @throws RemoteException - выкидывается при возникновение ошибок, связанных с удаленным вызовом методов
      */
     @Override
     public void removePerson(Person selectedItem) throws RemoteException {
@@ -76,7 +76,7 @@ public class RemoteServiceImpl implements RemoteService
      *
      * @param curPerson - обновляемый человек
      * @param updatePerson - человек со внесенными изменениями
-     * @throws RemoteException
+     * @throws RemoteException - выкидывается при возникновение ошибок, связанных с удаленным вызовом методов
      */
     @Override
     public void updatePerson(Person curPerson, Person updatePerson) throws RemoteException {
