@@ -1,0 +1,22 @@
+body
+{
+    text-decoration-color: brown;
+    font-size: 30px;
+    text-align: center;
+    background: url("../images/crusader.png") no-repeat;
+    -webkit-background-size: 100%;
+}
+div.container1
+{
+    height: 30em;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+.btn1
+{
+    font-size: 57px;
+    color: #a08d00;
+    background: url("/images/blood.png");
+
+}
