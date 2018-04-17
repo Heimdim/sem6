@@ -1,7 +1,7 @@
 body
 {
     text-decoration-color: brown;
-    font-size: 30px;
+    font-size: 35px;
     text-align: center;
     background: url("../images/crusader.png") no-repeat;
     -webkit-background-size: 100%;
@@ -18,5 +18,18 @@ div.container1
     font-size: 57px;
     color: #a08d00;
     background: url("/images/blood.png");
-
+}
+div.container2
+{
+    height: 20em;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+.btn2
+{
+    font-size: 40px;
+    color: #a08d00;
+    background: url("/images/blood.png");
+    -webkit-background-size: 100%;
 }
