@@ -6,24 +6,24 @@ public class Crusade
     private boolean haveIndulgence, isAve, isDeus;
 
 
-    public boolean isHaveIndulgence() {
-        return haveIndulgence;
+    public String isHaveIndulgence() {
+        return String.valueOf(haveIndulgence);
     }
 
     public void setHaveIndulgence(boolean haveIndulgence) {
         this.haveIndulgence = haveIndulgence;
     }
 
-    public boolean isAve() {
-        return isAve;
+    public String isAve() {
+        return String.valueOf(isAve);
     }
 
     public void setAve(boolean ave) {
         isAve = ave;
     }
 
-    public boolean isDeus() {
-        return isDeus;
+    public String isDeus() {
+        return String.valueOf(isDeus);
     }
 
     public void setDeus(boolean deus) {
@@ -53,12 +53,11 @@ public class Crusade
 
     @Override
     public String toString() {
-        return "Crusade{" +
-                "popeName='" + popeName + '\'' +
-                ", goal='" + goal + '\'' +
-                ", haveIndulgence=" + haveIndulgence +
-                ", isAve=" + isAve +
-                ", isDeus=" + isDeus +
-                '}';
+        return "Крестовый Поход:" +"\r\n"+
+                "Имя Папы Римского: " + popeName +"\r\n"+
+                "Причина похода:  " + goal  +"\r\n"+
+                "Отпущены ли грехи:  " + haveIndulgence +"\r\n"+
+                "AVE MARIA?: " + isAve +"\r\n"+
+                "DEUS VULT?: " + isDeus +"\r\n";
     }
 }
