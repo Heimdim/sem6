@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<persons>
+    <person id="1488">
+        <age>20</age>
+        <height>180</height>
+        <name>Sasha</name>
+        <gender>MALE</gender>
+        <prefgender>FEMALE</prefgender>
+        <hprefage>25</hprefage>
+        <lprefage>18</lprefage>
+    </person>
+    <person id="1490">
+        <age>23</age>
+        <height>180</height>
+        <name>Olya</name>
+        <gender>FEMALE</gender>
+        <prefgender>MALE</prefgender>
+        <hprefage>25</hprefage>
+        <lprefage>18</lprefage>
+    </person>
+    <person id="1492">
+        <age>40</age>
+        <height>180</height>
+        <name>Dima</name>
+        <gender>MALE</gender>
+        <prefgender>FEMALE</prefgender>
+        <hprefage>30</hprefage>
+        <lprefage>20</lprefage>
+    </person>
+</persons>
