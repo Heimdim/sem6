@@ -1,0 +1,38 @@
+<?xml version="1.0"?><psns:persons xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:psns="http://Heimdim.com/persons" xsi:schemaLocation="http://Heimdim.com/persons">
+    <psns:person id="1488">
+        <psns:age>20</psns:age>
+        <psns:height>180</psns:height>
+        <psns:prefgender>FEMALE</psns:prefgender>
+        <psns:gender>MALE</psns:gender>
+        <psns:lprefage>18</psns:lprefage>
+        <psns:hprefage>25</psns:hprefage>
+        <psns:name>Sasha</psns:name>
+    </psns:person>
+	<psns:person id="1490">
+			<psns:age>23</psns:age>
+			<psns:height>180</psns:height>
+			<psns:prefgender>MALE</psns:prefgender>
+			<psns:gender>FEMALE</psns:gender>
+			<psns:lprefage>18</psns:lprefage>
+			<psns:hprefage>25</psns:hprefage>
+			<psns:name>Olya</psns:name>
+		</psns:person>
+	<psns:person id="1491">
+			<psns:age>42</psns:age>
+			<psns:height>17</psns:height>
+			<psns:prefgender>FEMALE</psns:prefgender>
+			<psns:gender>MALE</psns:gender>
+			<psns:lprefage>17</psns:lprefage>
+			<psns:hprefage>25</psns:hprefage>
+			<psns:name>Lesha</psns:name>
+		</psns:person>
+	<psns:person id="1492">
+			<psns:age>45</psns:age>
+			<psns:height>160</psns:height>
+			<psns:prefgender>FEMALE</psns:prefgender>
+			<psns:gender>MALE</psns:gender>
+			<psns:lprefage>20</psns:lprefage>
+			<psns:hprefage>25</psns:hprefage>
+			<psns:name>Dima</psns:name>
+		</psns:person>
+</psns:persons>
